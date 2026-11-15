@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prof. Yu-Yen Ou's Laboratory Guide｜Bioinformatics Laboratory, Dept. of CSE, Yuan Ze University</title>
+<style>
+:root{
+  --bg:#f4f6fb;
+  --paper:#ffffff;
+  --ink:#162033;
+  --sub:#344054;
+  --muted:#667085;
+  --accent:#2554e8;
+  --line:#e4e7ec;
+  --soft:#eef2ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  font-family:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+}
+header{
+  padding:44px 7vw 38px;
+  color:#fff;
+  background:linear-gradient(128deg,#0f172a 0%,#1e3a8a 55%,#4c1d95 100%);
+}
+header .top-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+header .kicker{
+  font-size:.9rem;
+  letter-spacing:.04em;
+  opacity:.88;
+  font-weight:500;
+}
+header .lang-switch{
+  color:#fff;
+  text-decoration:none;
+  font-size:.86rem;
+  font-weight:600;
+  padding:5px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.32);
+  background:rgba(255,255,255,.1);
+  transition:background .15s;
+}
+header .lang-switch:hover{
+  background:rgba(255,255,255,.22);
+}
+header h1{
+  font-size:clamp(2rem,4vw,3rem);
+  line-height:1.2;
+  margin:.45rem 0 0;
+  letter-spacing:-.01em;
+}
+.layout{
+  display:grid;
+  grid-template-columns:265px minmax(0,1fr);
+  gap:26px;
+  max-width:1420px;
+  margin:0 auto;
+  padding:28px;
+}
+nav{
+  position:sticky;
+  top:18px;
+  align-self:start;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px 14px;
+  box-shadow:0 2px 10px rgba(16,24,40,.03);
+}
+nav h3{
+  margin:2px 0 10px;
+  padding:0 8px;
+  color:var(--muted);
+  font-size:.84rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+nav a{
+  display:block;
+  text-decoration:none;
+  color:var(--sub);
+  padding:8px 10px;
+  border-radius:9px;
+  font-size:.91rem;
+  line-height:1.42;
+  margin-bottom:2px;
+  transition:background .15s,color .15s;
+}
+nav a:hover{
+  background:var(--soft);
+  color:var(--accent);
+  font-weight:600;
+}
+main{min-width:0}
+section{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:30px 34px;
+  margin-bottom:22px;
+  box-shadow:0 2px 10px rgba(16,24,40,.025);
+}
+h2{
+  font-size:1.58rem;
+  line-height:1.3;
+  margin:0 0 14px;
+  color:var(--ink);
+}
+h3{
+  font-size:1.12rem;
+  margin:22px 0 8px;
+  color:#1e293b;
+}
+p{margin:10px 0}
+.lead{
+  font-size:1.03rem;
+  color:var(--sub);
+}
+.letter-box{
+  background:linear-gradient(180deg,#fcfdff 0%,#f8faff 100%);
+  border:1px solid #dbe4ff;
+  border-left:5px solid var(--accent);
+  border-radius:14px;
+  padding:22px 26px;
+  margin:10px 0 4px;
+}
+.letter-box p{
+  margin:14px 0;
+  font-size:1.01rem;
+  color:#1f2937;
+}
+.letter-sign{
+  margin-top:18px;
+  padding-top:12px;
+  border-top:1px dashed #cbd5e1;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+  color:var(--sub);
+  font-weight:600;
+  font-size:.94rem;
+}
+.clean-list{
+  margin:10px 0 6px;
+  padding-left:22px;
+}
+.clean-list li{
+  margin:7px 0;
+  color:#1f2937;
+}
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:14px 0 6px;
+  font-size:.93rem;
+}
+th,td{
+  border-bottom:1px solid var(--line);
+  padding:11px 12px;
+  text-align:left;
+  vertical-align:top;
+}
+th{
+  background:#f8fafc;
+  color:var(--sub);
+  font-weight:700;
+}
+code{
+  background:#f1f5f9;
+  color:#0f172a;
+  padding:2px 6px;
+  border-radius:5px;
+  font-size:.9em;
+}
+.small{
+  font-size:.85rem;
+  color:var(--muted);
+}
+footer{
+  max-width:1420px;
+  margin:auto;
+  padding:6px 28px 44px;
+  color:var(--muted);
+  font-size:.9rem;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+footer a{
+  color:var(--accent);
+  text-decoration:none;
+}
+@media(max-width:940px){
+  .layout{grid-template-columns:1fr;padding:16px}
+  nav{position:relative;top:auto}
+  header{padding:36px 22px 30px}
+  section{padding:22px 20px}
+}
+@media print{
+  nav,.lang-switch{display:none!important}
+  .layout{display:block;padding:0}
+  section{break-inside:avoid;box-shadow:none;margin-bottom:16px}
+  body{background:#fff}
+  header{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="top-row">
+    <div class="kicker">Department of Computer Science and Engineering / Master Program in Biomedical Informatics, Yuan Ze University · Bioinformatics Laboratory</div>
+    <a class="lang-switch" href="index.html">繁體中文版 →</a>
+  </div>
+  <h1>Prof. Yu-Yen Ou's Laboratory Guide &amp; Notice</h1>
+</header>
+
+<div class="layout">
+  <nav>
+    <h3>Contents</h3>
+    <a href="#letter">1. A Letter to Prospective Members</a>
+    <a href="#awards">2. Advisor Profile &amp; Honors</a>
+    <a href="#research">3. Recent Research Achievements</a>
+    <a href="#undergrad">4. NSTC Undergraduate Grants</a>
+    <a href="#training">5. Core Research Training</a>
+    <a href="#attitude">6. Four Core Attitude Requirements</a>
+  </nav>
+
+  <main>
+    <!-- Section 1 -->
+    <section id="letter">
+      <h2>1. A Letter to Prospective Laboratory Members</h2>
+      <div class="letter-box">
+        <p>
+          Since earning my Ph.D. from the Department of Computer Science and Information Engineering at National Taiwan University in 2005 and joining the Department of Computer Science and Engineering at Yuan Ze University, more than twenty years have passed in the blink of an eye. I have always appreciated the classical saying: <i>“A mountain need not be high; it becomes renowned if an immortal dwells within. Waters need not be deep; they become spiritual if a dragon resides beneath.”</i> When people on the outside look at university laboratories, they sometimes judge first by institutional prestige or lavish hardware facilities. Frankly speaking, within the domestic environment, we are not a team born with massive funding or extravagant resources—and competition in international academia is even harsher and more intense than most imagine, pitting us directly against well-resourced leading groups worldwide. Yet it is precisely under such limited resources and conditions that generations of members in our laboratory have worked conscientiously and diligently day after day, accumulating progress step by step. Over the years, our work has been recognized with numerous major honors—including multiple University Outstanding Research Awards and National Science and Technology Council (NSTC) Research Awards—and together with cohorts of Ph.D., Master's, and undergraduate research students, we have published paper after paper in top-ranked international SCI Q1 journals. This proves that to conduct research in our field, what matters most has never been how many resources you hold, but how much effort, solid fundamentals, and execution you bring.
+        </p>
+        <p>
+          Regarding work ethic and research, Academician Der-Tsai Lee once shared a quote: <i>“Every job is a self-portrait of those who did it. Autograph your work with quality.”</i> Our laboratory is <b>primarily an academic research-oriented laboratory</b>. Once you step through this door, you must learn how to identify research questions worth answering, how to make effective use of the latest tools, and how to produce rigorous, reproducible experiments alongside logically clear academic presentations—making every piece of research you touch worthy of bearing your own signature.
+        </p>
+        <p>
+          Precisely because we cherish this hard-earned research environment, compared with the grades currently on your transcript or how strong your programming skills already are, <b>what I value far more is your attitude and basic personal integrity</b>. Technical gaps can be trained after you join; however, if someone works carelessly, cannot be found when expected to show up, merely wants a free ride on the resources built up through the diligent efforts of generations of senior lab members, or repeatedly creates trouble for me, then no matter how smart you are, we cannot walk on the same path.
+        </p>
+        <div class="letter-sign">
+          <span>Prof. Yu-Yen Ou · Department of Computer Science and Engineering, Yuan Ze University</span>
+          <span>Bioinformatics Laboratory, Dept. of CSE, Yuan Ze University</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="awards">
+      <h2>2. Advisor Profile &amp; Major Honors</h2>
+      <p class="lead">
+        Prof. Yu-Yen Ou received his Ph.D. from the Department of Computer Science and Information Engineering at National Taiwan University in 2005 and joined the Department of Computer Science and Engineering at Yuan Ze University in the same year, serving for over twenty years. His research focuses on machine learning, bioinformatics, and artificial intelligence, with long-standing dedication to protein sequence analysis and function prediction—introducing Natural Language Processing (NLP), Protein Language Models (PLMs), Multi-Window Convolutional Neural Networks (mCNNs), and Retrieval-Augmented Generation (RAG) into prominent research topics including protein decoding, precision medicine, and cancer neoantigen prediction.
+      </p>
+
+      <h3>Major Academic Awards</h3>
+      <ul class="clean-list">
+        <li><b>22nd Y. Z. Hsu Yuan Ze Chair Professor</b> (Far Eastern Y. Z. Hsu Science and Technology Memorial Foundation)</li>
+        <li><b>21st Y. Z. Hsu Distinguished Professor Award</b> (Far Eastern Y. Z. Hsu Science and Technology Memorial Foundation)</li>
+        <li><b>Outstanding Research Award (Information Category), Yuan Ze University</b> (Three-time recipient: Academic Years 2018, 2021, and 2024)</li>
+        <li><b>National Science and Technology Council (NSTC) Research Award for University Faculty</b> (Consecutive multi-year recipient; Principal Investigator of consecutive multi-year NSTC research grants)</li>
+      </ul>
+
+      <h3>International Invited Talks &amp; Academic Service</h3>
+      <ul class="clean-list">
+        <li><b>Invited Speaker, 28th Annual Symposium of GEPROM (Groupe d’étude des protéines membranaires), Montréal, Canada</b> (Round-trip airfare from Taipei to Montréal and local accommodation fully sponsored by the organizing committee)</li>
+        <li><b>Keynote Speaker, The 2nd International Conference on Intelligent Systems and Data Science (ISDS 2024), Vietnam</b></li>
+        <li><b>Invited Speaker, Taiwan Multi-Omics and Precision Medicine Joint Conference (MOPM 2023)</b></li>
+        <li>Former <b>Board Member (10th Term), Taiwan Bioinformatics and Systems Biology Society</b>, and Organizing Committee Member for multiple international conferences including <b>IEEE AIxMHC 2025</b></li>
+      </ul>
+
+      <h3>Academic Impact</h3>
+      <ul class="clean-list">
+        <li>Published over 40 SCI-indexed international journal papers in the past five years (including 11 SCI papers in Academic Year 2024 alone), with the majority appearing in top-tier Q1 journals such as <i>IJBM</i> and <i>JCIM</i>; 1,729 total citations on SCI Web of Science (average 25.06 citations per paper, H-Index 24), and over 2,800 career citations on Google Scholar (exceeding 300 citations annually in recent years).</li>
+        <li>Supervised <b>8 Ph.D. graduates</b> and numerous Master's students to completion; most Ph.D. alumni hold faculty positions at universities in Taiwan and abroad.</li>
+      </ul>
+    </section>
+
+    <!-- Section 3 -->
+    <section id="research">
+      <h2>3. Recent Research Achievements (Selected 2024–2026 Publications)</h2>
+      <p class="lead">
+        Treating protein and antigenic peptide sequences as a “biological language,” the Bioinformatics Laboratory integrates pre-trained and generative Protein Language Models (PLMs), Multi-Window Scanning Convolutional Neural Networks (mCNNs), and Retrieval-Augmented Generation (RAG) to consistently publish high-quality SCI Q1 journal papers in cancer neoantigen prediction, cytokine immune epitope identification, and membrane transport channel decoding:
+      </p>
+
+      <table>
+        <tr>
+          <th style="width:75px">Year</th>
+          <th style="width:190px">Representative Model</th>
+          <th>Research Topic &amp; Contribution</th>
+          <th style="width:265px">Journal &amp; Field Ranking</th>
+        </tr>
+        <tr>
+          <td><b>2026</b></td>
+          <td><code>Metal-RAG-PLM</code></td>
+          <td>Predicting metal-binding residues in proteins by integrating Retrieval-Augmented Generation (RAG), protein language models, and deep learning.</td>
+          <td><i>Engineering Applications of Artificial Intelligence</i><br><span class="small">SCI Q1 · IF 8.0 · Rank 5/179</span></td>
+        </tr>
+        <tr>
+          <td><b>2026</b></td>
+          <td><code>IFNg_DeepKG</code></td>
+          <td>Incorporating Knowledge Graph Retrieval-Augmented Generation (Knowledge Graph RAG) to identify interferon-γ (IFN-γ)-inducing epitopes.</td>
+          <td><i>Journal of Chemical Information and Modeling</i><br><span class="small">SCI Q1 · IF 5.3 · Rank 15/72</span></td>
+        </tr>
+        <tr>
+          <td><b>2026</b></td>
+          <td><code>DeepRAGIL-2</code> / <code>NeoGen-BC</code> / <code>DeepCR</code></td>
+          <td>Covering IL-2-inducing peptide prediction, generative design of shared breast cancer neoantigens, and cytokine receptor identification.</td>
+          <td><i>J. Biomol. Struct. Dyn.</i> / <i>BBRC</i> / <i>Biomed. Signal Process. Control</i></td>
+        </tr>
+        <tr>
+          <td><b>2025</b></td>
+          <td><code>RTK_RAG</code></td>
+          <td>Combining RAG with multi-window convolutional neural networks to predict ATP-binding sites in receptor tyrosine kinases (RTKs).</td>
+          <td><i>Journal of Chemical Information and Modeling</i><br><span class="small">SCI Q1 · IF 5.3 · Rank 15/72</span></td>
+        </tr>
+        <tr>
+          <td><b>2025</b></td>
+          <td><code>RAG_MCNNIL6</code> / <code>CaBind_MCNN</code></td>
+          <td>Developing predictive models for IL-6-inducing immune epitopes and potential target sites of calcium channel blockers.</td>
+          <td><i>Journal of Chemical Information and Modeling</i><br><span class="small">SCI Q1 · IF 5.3 · Rank 15/72</span></td>
+        </tr>
+        <tr>
+          <td><b>2024</b></td>
+          <td><code>DeepNeoAG</code></td>
+          <td>Combining protein language models and multi-window convolutional neural networks to predict melanoma cancer neoantigen epitopes.</td>
+          <td><i>Int. Journal of Biological Macromolecules</i><br><span class="small">SCI Q1 · IF 8.5 · Rank 6/94</span></td>
+        </tr>
+        <tr>
+          <td><b>2024</b></td>
+          <td><code>VesiMCNN</code> / <code>MCNN_MC</code> / <code>Protein-DNA</code></td>
+          <td>Identifying vesicular transport proteins, predicting mitochondrial carriers and investigating the toxicity mechanism of bongkrekic acid, and deciphering protein–DNA interactions.</td>
+          <td><i>IJBM</i> (IF 8.5) / <i>JCIM</i> (IF 5.3) / <i>Journal of Molecular Biology</i></td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="undergrad">
+      <h2>4. Recent NSTC Undergraduate Research Grants Supervised</h2>
+      <p class="lead">
+        Our laboratory places strong emphasis on early research cultivation for undergraduate students, supervising students to receive approval for National Science and Technology Council (NSTC) College Student Research Grants for consecutive years, with multiple projects further extended into international SCI journal publications:
+      </p>
+
+      <table>
+        <tr>
+          <th style="width:95px">Year</th>
+          <th style="width:140px">Student</th>
+          <th>Project Title</th>
+          <th style="width:190px">Grant No. / Period</th>
+        </tr>
+        <tr>
+          <td><b>2026 (115)</b></td>
+          <td><b>Yi-Ting Chung</b></td>
+          <td>Prediction of Rab GTPase Binding Sites Based on Protein Language Models and Multi-Window Deep Learning and Its Application in Dual-Target Cancer Therapy</td>
+          <td><code>115-2813-C-155-053-E</code><br><span class="small">2026/07/01 ~ 2027/02/28</span></td>
+        </tr>
+        <tr>
+          <td><b>2025 (114)</b></td>
+          <td><b>Wei-En Jhang</b></td>
+          <td>Multi-Window Convolutional Neural Networks Combined with Retrieval-Augmented Generation to Enhance ATP-Binding Site Prediction in Receptor Tyrosine Kinases</td>
+          <td><code>114-2813-C-155-036-E</code><br><span class="small">2025/07/01 ~ 2026/02/28</span></td>
+        </tr>
+        <tr>
+          <td><b>2025 (114)</b></td>
+          <td><b>Sin-Siang Wei</b></td>
+          <td>Multi-Window Convolutional Neural Networks with Transfer Learning for Predicting ATP-Binding Sites in Cystic Fibrosis Transmembrane Conductance Regulator (CFTR)</td>
+          <td><code>114-2813-C-155-037-E</code><br><span class="small">2025/07/01 ~ 2026/02/28</span></td>
+        </tr>
+        <tr>
+          <td><b>2024 (113)</b></td>
+          <td><b>Cheng-Che Chuang</b></td>
+          <td>Extracting Protein Sequence Features Using Pre-trained Language Models Combined with Multi-Window Scanning Convolutional Neural Networks to Predict Antigenic Epitopes of Interleukin-13</td>
+          <td><code>113-2813-C-155-015-E</code><br><span class="small">2024/07/01 ~ 2025/02/28</span></td>
+        </tr>
+        <tr>
+          <td><b>2023 (112)</b></td>
+          <td><b>Yi-Jing Lin</b></td>
+          <td>Enhancing the Efficiency of Efflux Protein Prediction Using High-Efficiency Multiple Sequence Alignment Tools</td>
+          <td><code>112-2813-C-155-013-E</code><br><span class="small">2023/07/01 ~ 2024/02/29</span></td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Section 5 -->
+    <section id="training">
+      <h2>5. A Research-Oriented Laboratory: Core Training</h2>
+      <p class="lead">
+        The Bioinformatics Laboratory is primarily an academic research-oriented laboratory. After joining the laboratory, members must build a solid foundation in the following three core competencies:
+      </p>
+
+      <ol class="clean-list">
+        <li><b>Learning How to Conduct Research:</b> Identify clear research questions from literature review, establish rigorous experimental designs and fair comparison baselines, and ensure the reproducibility of research results.</li>
+        <li><b>Learning Academic Presentations and Scientific Writing:</b> Train to write papers following a rigorous scientific structure and cultivate logically clear oral academic presentation skills, presenting research outcomes through explicit conclusions supported by figures, tables, and evidence.</li>
+        <li><b>Making Effective Use of Research Tools:</b> Proactively learn and utilize research assistance tools to improve execution efficiency, while genuinely understanding the operating principles of all code and methods, personally verifying every dataset and literature citation, and taking full responsibility for research quality.</li>
+      </ol>
+    </section>
+
+    <!-- Section 6 -->
+    <section id="attitude">
+      <h2>6. Student Attitude Valued Most: Four Basic Requirements</h2>
+      <p class="lead">
+        Research methodologies and technical skills can be cultivated after joining the laboratory, whereas I place far greater importance on a student's attitude. Before joining the laboratory, please make sure you can commit to the following four points:
+      </p>
+
+      <ol class="clean-list">
+        <li><b>Never create trouble for the advisor:</b> Fulfill your proper duties as a student, strictly abide by academic ethics and regulations, and take responsibility for your own words, conduct, and research progress—never put your advisor in the position of handling problems that should never have occurred.</li>
+        <li><b>Show up when you are expected to be there:</b> Be punctual for regular laboratory meetings, scheduled discussions, and times requiring team coordination. If you have a legitimate reason, notify us in advance—never be absent without notice or become unreachable.</li>
+        <li><b>Act with integrity and gratitude:</b> Cherish the mentorship and assistance provided by your advisor and senior lab members rather than taking others' efforts for granted. Carry every committed responsibility through from start to finish, without making excuses or quitting halfway when encountering difficulties.</li>
+        <li><b>Think about your contribution to the laboratory, rather than merely enjoying its resources:</b> The laboratory's research environment, accumulated experience, and reputation are the collective achievements of generations of members. As a member of the team, you should contribute proactively, assist your peers, and pass down experience rather than merely enjoying existing resources.</li>
+      </ol>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <span>Department of Computer Science and Engineering · Bioinformatics Laboratory, Yuan Ze University｜Advisor: Prof. Yu-Yen Ou (<a href="mailto:yien@saturn.yzu.edu.tw">yien@saturn.yzu.edu.tw</a> · +886-3-463-8800 ext. 2185)</span>
+  <span>Every job is a self-portrait of those who did it. Autograph your work with quality.</span>
+</footer>
+
+</body>
+</html>

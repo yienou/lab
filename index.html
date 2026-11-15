@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>歐昱言老師實驗室須知｜元智大學資工系 生物資訊實驗室</title>
+<style>
+:root{
+  --bg:#f4f6fb;
+  --paper:#ffffff;
+  --ink:#162033;
+  --sub:#344054;
+  --muted:#667085;
+  --accent:#2554e8;
+  --line:#e4e7ec;
+  --soft:#eef2ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.8;
+  font-family:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+}
+header{
+  padding:44px 7vw 38px;
+  color:#fff;
+  background:linear-gradient(128deg,#0f172a 0%,#1e3a8a 55%,#4c1d95 100%);
+}
+header .top-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+header .kicker{
+  font-size:.9rem;
+  letter-spacing:.06em;
+  opacity:.88;
+  font-weight:500;
+}
+header .lang-switch{
+  color:#fff;
+  text-decoration:none;
+  font-size:.86rem;
+  font-weight:600;
+  padding:5px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.32);
+  background:rgba(255,255,255,.1);
+  transition:background .15s;
+}
+header .lang-switch:hover{
+  background:rgba(255,255,255,.22);
+}
+header h1{
+  font-size:clamp(2rem,4vw,3.1rem);
+  line-height:1.2;
+  margin:.45rem 0 0;
+  letter-spacing:-.01em;
+}
+.layout{
+  display:grid;
+  grid-template-columns:255px minmax(0,1fr);
+  gap:26px;
+  max-width:1420px;
+  margin:0 auto;
+  padding:28px;
+}
+nav{
+  position:sticky;
+  top:18px;
+  align-self:start;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px 14px;
+  box-shadow:0 2px 10px rgba(16,24,40,.03);
+}
+nav h3{
+  margin:2px 0 10px;
+  padding:0 8px;
+  color:var(--muted);
+  font-size:.86rem;
+  letter-spacing:.05em;
+}
+nav a{
+  display:block;
+  text-decoration:none;
+  color:var(--sub);
+  padding:8px 10px;
+  border-radius:9px;
+  font-size:.92rem;
+  line-height:1.45;
+  margin-bottom:2px;
+  transition:background .15s,color .15s;
+}
+nav a:hover{
+  background:var(--soft);
+  color:var(--accent);
+  font-weight:600;
+}
+main{min-width:0}
+section{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:30px 34px;
+  margin-bottom:22px;
+  box-shadow:0 2px 10px rgba(16,24,40,.025);
+}
+h2{
+  font-size:1.62rem;
+  line-height:1.3;
+  margin:0 0 14px;
+  color:var(--ink);
+}
+h3{
+  font-size:1.12rem;
+  margin:22px 0 8px;
+  color:#1e293b;
+}
+p{margin:10px 0}
+.lead{
+  font-size:1.04rem;
+  color:var(--sub);
+}
+.letter-box{
+  background:linear-gradient(180deg,#fcfdff 0%,#f8faff 100%);
+  border:1px solid #dbe4ff;
+  border-left:5px solid var(--accent);
+  border-radius:14px;
+  padding:22px 26px;
+  margin:10px 0 4px;
+}
+.letter-box p{
+  margin:14px 0;
+  font-size:1.02rem;
+  color:#1f2937;
+  text-align:justify;
+}
+.letter-sign{
+  margin-top:18px;
+  padding-top:12px;
+  border-top:1px dashed #cbd5e1;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+  color:var(--sub);
+  font-weight:600;
+  font-size:.95rem;
+}
+.clean-list{
+  margin:10px 0 6px;
+  padding-left:22px;
+}
+.clean-list li{
+  margin:7px 0;
+  color:#1f2937;
+}
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:14px 0 6px;
+  font-size:.94rem;
+}
+th,td{
+  border-bottom:1px solid var(--line);
+  padding:11px 12px;
+  text-align:left;
+  vertical-align:top;
+}
+th{
+  background:#f8fafc;
+  color:var(--sub);
+  font-weight:700;
+}
+code{
+  background:#f1f5f9;
+  color:#0f172a;
+  padding:2px 6px;
+  border-radius:5px;
+  font-size:.9em;
+}
+.small{
+  font-size:.86rem;
+  color:var(--muted);
+}
+footer{
+  max-width:1420px;
+  margin:auto;
+  padding:6px 28px 44px;
+  color:var(--muted);
+  font-size:.9rem;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+footer a{
+  color:var(--accent);
+  text-decoration:none;
+}
+@media(max-width:940px){
+  .layout{grid-template-columns:1fr;padding:16px}
+  nav{position:relative;top:auto}
+  header{padding:36px 22px 30px}
+  section{padding:22px 20px}
+}
+@media print{
+  nav,.lang-switch{display:none!important}
+  .layout{display:block;padding:0}
+  section{break-inside:avoid;box-shadow:none;margin-bottom:16px}
+  body{background:#fff}
+  header{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="top-row">
+    <div class="kicker">元智大學資訊工程學系／生物與醫學資訊碩士學位學程 · 生物資訊實驗室 (Bioinformatics Laboratory)</div>
+    <a class="lang-switch" href="en.html">English Version →</a>
+  </div>
+  <h1>歐昱言老師實驗室須知</h1>
+</header>
+
+<div class="layout">
+  <nav>
+    <h3>目錄導覽</h3>
+    <a href="#letter">1. 給未來夥伴的一封信</a>
+    <a href="#awards">2. 指導教授簡介與獲獎榮譽</a>
+    <a href="#research">3. 實驗室近年研究成果</a>
+    <a href="#undergrad">4. 近年國科會大專生計畫</a>
+    <a href="#training">5. 進實驗室的核心研究訓練</a>
+    <a href="#attitude">6. 最重視的四項態度要求</a>
+  </nav>
+
+  <main>
+    <!-- Section 1 -->
+    <section id="letter">
+      <h2>1. 給未來實驗室夥伴的一封信</h2>
+      <div class="letter-box">
+        <p>
+          自 2005 年從台大資工博士班畢業來到元智資工任教，轉眼已經超過二十年。我一直很喜歡「山不在高，有仙則名；水不在深，有龍則靈」這句話。外界看大學實驗室，有時會先看學校光環或硬體排場，坦白說，在國內環境裡，我們並不是那種天生坐擁龐大經費或華麗資源的團隊，而國際學術界的競爭更是比想像中嚴苛與緊湊，面對的皆是世界各地資源充沛的強者，但也正是在這樣非常有限的資源與條件下，實驗室歷屆夥伴始終兢兢業業，每天紮紮實實的持續努力，一步步累積，歷年來獲得多次校內研究傑出獎與國科會研究獎勵等許多大獎的肯定，更帶著一屆屆博士生、碩士生與大學部專題生，把一篇篇論文送上國際排名前面的SCI Q1期刊，證明我們這個領域要做研究，最重要的從來不是握有多少資源，而是有多少的努力、基本功與執行力。
+        </p>
+        <p>
+          在工作態度與研究上，李德財院士當年分享的：<i>“Every job is a self-portrait of those who did it. Autograph your work with quality.”</i> ，<b>「件件工作，反映自我；凡經我手，必為佳作」</b>，我們實驗室是一間<b>「以學術研究為主」</b>的實驗室，進了這個門，要學會怎麼找出值得回答的研究問題、怎麼善用最新的工具，做出嚴謹可重現的實驗與邏輯清晰的學術報告，讓每一份經手的研究都值得簽上你自己的名字。
+        </p>
+        <p>
+          正因為我們珍惜這個得來不易的研究園地，比起你現在成績單上有幾分、程式已經有多強，<b>我更重視的是你的「態度」與「做人的基本道義」</b>。技術不足可以進來再練，但如果一個人做事敷衍、該出現的時候找不到人、只想搭便車享受歷屆學長姐兢兢業業打拚下來的資源，甚至不斷製造我的麻煩，那再聰明我們也無法走在同一條路上。
+        </p>
+        <div class="letter-sign">
+          <span>元智大學資訊工程學系 教授　歐昱言 (Prof. Yu-Yen Ou)</span>
+          <span>元智大學資工系 生物資訊實驗室 (Bioinformatics Laboratory)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="awards">
+      <h2>2. 指導教授簡介與重要獲獎榮譽</h2>
+      <p class="lead">
+        歐昱言教授於 2005 年取得國立臺灣大學資訊工程學系博士學位，同年進入元智大學資訊工程學系任教，迄今服務已逾二十年。研究聚焦於機器學習、生物資訊與人工智慧，長期深耕蛋白質序列分析與功能預測，將自然語言處理（NLP）、蛋白質語言模型（PLM）、多重視窗卷積神經網路（mCNN）與檢索增強生成（RAG）導入蛋白解碼、精準醫療與腫瘤新抗原預測等各種熱門研究議題上。
+      </p>
+
+      <h3>重要學術獎項</h3>
+      <ul class="clean-list">
+        <li><b>第 22 屆「有庠元智講座」</b>（財團法人徐有庠先生紀念基金會）</li>
+        <li><b>第 21 屆「有庠傑出教授獎」</b>（財團法人徐有庠先生紀念基金會）</li>
+        <li><b>元智大學教師績效資訊類「研究傑出獎」</b>（107、110、113 學年度三度獲獎）</li>
+        <li><b>國家科學及技術委員會（NSTC）補助大專校院研究獎勵</b>（多年度連續獲獎；並連續多年主持國科會多年期研究計畫）</li>
+      </ul>
+
+      <h3>國際特邀演講與學術服務</h3>
+      <ul class="clean-list">
+        <li><b>加拿大蒙特婁膜蛋白研究學會（GEPROM）第 28 屆年會特邀專題演講</b>（大會全額贊助台北往返蒙特婁機票與當地食宿）</li>
+        <li><b>越南 The 2nd International Conference on Intelligent Systems and Data Science (ISDS 2024) 大會專題演講者（Keynote Speaker）</b></li>
+        <li><b>台灣多體學及精準醫學聯合會議（MOPM 2023）特邀專題演講</b></li>
+        <li>曾任<b>台灣生物資訊與系統生物學會第十屆理事</b>，並擔任 <b>IEEE AIxMHC 2025</b> 等多項國際會議籌備委員</li>
+      </ul>
+
+      <h3>學術影響力</h3>
+      <ul class="clean-list">
+        <li>近五年發表超過 40 篇 SCI 國際期刊論文（113 學年度單年度發表 11 篇 SCI 論文），多數刊登於 <i>IJBM</i>、<i>JCIM</i> 等領域頂尖 Q1 期刊；SCI Web of Science 總被引用 1,729 次（平均每篇 25.06 次，H-Index 24），Google Scholar 生涯累積引用逾 2,800 次（近年每年被引用皆逾 300 次）。</li>
+        <li>歷年已指導 <b>8 位博士</b>及多位碩士生完成學位，博士畢業生大都任職於國內外大學。</li>
+      </ul>
+    </section>
+
+    <!-- Section 3 -->
+    <section id="research">
+      <h2>3. 實驗室近年豐碩研究成果（2024–2026 代表性著作）</h2>
+      <p class="lead">
+        生物資訊實驗室將蛋白質與抗原胜肽序列視為「生物語言」，結合預訓練／生成式蛋白質語言模型（PLMs）、多重視窗掃描卷積神經網路（mCNN）與檢索增強生成（RAG），近年於癌症新抗原預測、細胞激素免疫表位與膜蛋白運輸通道解碼持續產出高品質 SCI Q1 期刊論文：
+      </p>
+
+      <table>
+        <tr>
+          <th style="width:75px">年份</th>
+          <th style="width:185px">代表模型／系統</th>
+          <th>研究主題與貢獻</th>
+          <th style="width:260px">發表期刊與領域排名</th>
+        </tr>
+        <tr>
+          <td><b>2026</b></td>
+          <td><code>Metal-RAG-PLM</code></td>
+          <td>結合檢索增強生成（RAG）、蛋白質語言模型與深度學習預測蛋白質金屬結合殘基。</td>
+          <td><i>Engineering Applications of Artificial Intelligence</i><br><span class="small">SCI Q1 · IF 8.0 · Rank 5/179</span></td>
+        </tr>
+        <tr>
+          <td><b>2026</b></td>
+          <td><code>IFNg_DeepKG</code></td>
+          <td>導入知識圖譜檢索增強生成（Knowledge Graph RAG）識別干擾素-γ（IFN-γ）誘導表位。</td>
+          <td><i>Journal of Chemical Information and Modeling</i><br><span class="small">SCI Q1 · IF 5.3 · Rank 15/72</span></td>
+        </tr>
+        <tr>
+          <td><b>2026</b></td>
+          <td><code>DeepRAGIL-2</code> / <code>NeoGen-BC</code> / <code>DeepCR</code></td>
+          <td>涵蓋 IL-2 誘導胜肽預測、乳癌共享新抗原生成設計，以及細胞激素受體識別。</td>
+          <td><i>J. Biomol. Struct. Dyn.</i> / <i>BBRC</i> / <i>Biomed. Signal Process. Control</i></td>
+        </tr>
+        <tr>
+          <td><b>2025</b></td>
+          <td><code>RTK_RAG</code></td>
+          <td>結合 RAG 與多重視窗卷積網路預測受體酪氨酸激酶（RTK）之 ATP 結合位點。</td>
+          <td><i>Journal of Chemical Information and Modeling</i><br><span class="small">SCI Q1 · IF 5.3 · Rank 15/72</span></td>
+        </tr>
+        <tr>
+          <td><b>2025</b></td>
+          <td><code>RAG_MCNNIL6</code> / <code>CaBind_MCNN</code></td>
+          <td>針對 IL-6 誘導免疫表位，以及鈣離子通道阻斷劑潛在標靶位點建立預測模型。</td>
+          <td><i>Journal of Chemical Information and Modeling</i><br><span class="small">SCI Q1 · IF 5.3 · Rank 15/72</span></td>
+        </tr>
+        <tr>
+          <td><b>2024</b></td>
+          <td><code>DeepNeoAG</code></td>
+          <td>結合蛋白質語言模型與多重視窗卷積網路預測黑色素瘤癌症新抗原表位。</td>
+          <td><i>Int. Journal of Biological Macromolecules</i><br><span class="small">SCI Q1 · IF 8.5 · Rank 6/94</span></td>
+        </tr>
+        <tr>
+          <td><b>2024</b></td>
+          <td><code>VesiMCNN</code> / <code>MCNN_MC</code> / <code>Protein-DNA</code></td>
+          <td>識別囊泡運輸蛋白、預測粒線體載體並探討米酵菌酸毒素作用機制，以及解析蛋白質-DNA 交互作用。</td>
+          <td><i>IJBM</i> (IF 8.5) / <i>JCIM</i> (IF 5.3) / <i>Journal of Molecular Biology</i></td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="undergrad">
+      <h2>4. 近年指導國科會大專學生研究計畫</h2>
+      <p class="lead">
+        實驗室非常重視大學部學生的早期研究培育，連續多年指導學生獲核定通過國科會大專學生研究計畫，多項計畫成果並進一步延伸發表於國際 SCI 期刊：
+      </p>
+
+      <table>
+        <tr>
+          <th style="width:75px">年度</th>
+          <th style="width:95px">學生姓名</th>
+          <th>計畫名稱</th>
+          <th style="width:185px">計畫編號／執行期間</th>
+        </tr>
+        <tr>
+          <td><b>115</b></td>
+          <td><b>鐘怡婷</b></td>
+          <td>基於蛋白質語言模型與多視窗深度學習之 Rab GTP 酶結合位點預測及其在癌症雙向標靶治療之應用</td>
+          <td><code>115-2813-C-155-053-E</code><br><span class="small">2026/07/01 ~ 2027/02/28</span></td>
+        </tr>
+        <tr>
+          <td><b>114</b></td>
+          <td><b>張維恩</b></td>
+          <td>多視窗卷積神經網路結合檢索增強生成以提升受體酪氨酸激酶之 ATP 結合點位預測</td>
+          <td><code>114-2813-C-155-036-E</code><br><span class="small">2025/07/01 ~ 2026/02/28</span></td>
+        </tr>
+        <tr>
+          <td><b>114</b></td>
+          <td><b>韋昕翔</b></td>
+          <td>多視窗卷積神經網路配合遷移學習以預測囊狀纖維化跨膜傳導調節蛋白 ATP 結合位點</td>
+          <td><code>114-2813-C-155-037-E</code><br><span class="small">2025/07/01 ~ 2026/02/28</span></td>
+        </tr>
+        <tr>
+          <td><b>113</b></td>
+          <td><b>莊承哲</b></td>
+          <td>使用預訓練語言模型來提取蛋白質序列特徵，並結合多視窗掃描卷積神經網路模型預測白介素-13的抗原表位</td>
+          <td><code>113-2813-C-155-015-E</code><br><span class="small">2024/07/01 ~ 2025/02/28</span></td>
+        </tr>
+        <tr>
+          <td><b>112</b></td>
+          <td><b>林宜靜</b></td>
+          <td>利用高效率的多重序列比對工具來增強預測外排蛋白的效率</td>
+          <td><code>112-2813-C-155-013-E</code><br><span class="small">2023/07/01 ~ 2024/02/29</span></td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Section 5 -->
+    <section id="training">
+      <h2>5. 以研究為主的實驗室：進實驗室的核心訓練</h2>
+      <p class="lead">
+        生物資訊實驗室是一間以學術研究為主的實驗室，進實驗室後必須紮實學習以下三項核心能力：
+      </p>
+
+      <ol class="clean-list">
+        <li><b>學習如何做研究：</b>從文獻閱讀中找出明確的研究問題，建立嚴謹的實驗設計與公平比較基準，確保研究結果具可重現性。</li>
+        <li><b>學習學術報告與論文寫作：</b>訓練以嚴謹的科學架構撰寫論文，並培養邏輯清晰的口頭學術報告能力，以明確結論搭配圖表證據呈現研究成果。</li>
+        <li><b>善用各種研究工具：</b>積極學習並善用各類輔助研究工具以提升研究執行效率；同時必須真正理解程式與方法的運作原理，親自驗證所有數據與文獻引用，對研究品質負起完全責任。</li>
+      </ol>
+    </section>
+
+    <!-- Section 6 -->
+    <section id="attitude">
+      <h2>6. 最重視的學生態度：四項基本要求</h2>
+      <p class="lead">
+        研究方法與技術都可以進實驗室再培養，但我更重視學生的態度。加入實驗室前，請務必確認自己能做到以下四點：
+      </p>
+
+      <ol class="clean-list">
+        <li><b>絕對不能製造我的麻煩：</b>做好學生應盡的本分，嚴守學術倫理與規範，對自己的言行與研究進度負責，不讓老師替你處理本不該發生的問題。</li>
+        <li><b>該出現的時候要出現：</b>固定的實驗室會議、約定好的討論與團隊需要配合的時間請準時出席，若有正當事由請提前告知，不無故缺席或失聯。</li>
+        <li><b>要有道義：</b>珍惜老師與學長姐的指導與協助，不把別人的付出視為理所當然，答應負責的事情要有始有終，不遇到困難就推託或半途而廢。</li>
+        <li><b>進了實驗室必須思考自己對實驗室的貢獻，而不是只有享受資源：</b>實驗室的研究環境、累積經驗與聲譽是歷屆成員共同努力的成果，成為團隊的一份子應主動付出、協助同儕與傳承經驗，而不是只想享受現成資源。</li>
+      </ol>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <span>元智大學資訊工程學系 · 生物資訊實驗室｜指導教授：歐昱言 (<a href="mailto:yien@saturn.yzu.edu.tw">yien@saturn.yzu.edu.tw</a> · 03-4638800 #2185)</span>
+  <span>Every job is a self-portrait of those who did it. Autograph your work with quality.</span>
+</footer>
+
+</body>
+</html>
