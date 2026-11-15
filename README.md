@@ -8,5 +8,5 @@ Department of Computer Science and Engineering / Master Program in Biomedical In
 
 ## 實驗室須知 / Laboratory Guide & Notice
 
-- **繁體中文版（Traditional Chinese）**：[`index.html`](./index.html)（GitHub Pages: https://yienou.github.io/lab/）
-- **English Version**：[`en.html`](./en.html)（GitHub Pages: https://yienou.github.io/lab/en.html）
+- **繁體中文版（Traditional Chinese）**：[`index.html`](./index.html)（ GitHub Pages: https://yienou.github.io/lab/ ）
+- **English Version**：[`en.html`](./en.html)（GitHub Pages: https://yienou.github.io/lab/en.html ）
